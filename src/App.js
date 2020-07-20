@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <Navbar dark color="dark">
           <div className="container">
-            <NavbarBrand href="#">Hello Bois</NavbarBrand>
+            <NavbarBrand href="#">Removing all Confusions</NavbarBrand>
           </div>
         </Navbar>
 
