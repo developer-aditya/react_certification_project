@@ -4,19 +4,8 @@ import { Card, CardImg, CardTitle, CardBody, CardText } from 'reactstrap';
 
 class DisplayDish extends Component {
 
-   constructor(props) {
-      super(props);
-
-      this.state = {
-         something: null
-      }
-
-   }
-
-
-
    renderDish(clickedDish) {
-      if (clickedDish === null) {
+      if (clickedDish === undefined) {
          return (
             <div></div>
          );
@@ -35,11 +24,8 @@ class DisplayDish extends Component {
    }
 
 
-
-
    renderComment(clickedDish) {
-
-      if (clickedDish === null) {
+      if (clickedDish === undefined) {
          return (
             <div></div>
          );
@@ -76,16 +62,16 @@ class DisplayDish extends Component {
 
 
 
-
-
    render() {
       return (
-         <div className="row">
-            <div className="col-md-5 col-12 p-0 m-3">
-               {this.renderDish(this.props.selectedDish)}
-            </div>
-            <div className="col-md-5 col-12 p-0 m-3">
-               {this.renderComment(this.props.selectedDish)}
+         <div className="container">
+            <div className="row">
+               <div className="col-md-5 col-12 p-0 m-3">
+                  {this.renderDish(this.props.selectedDish)}
+               </div>
+               <div className="col-md-5 col-12 p-0 m-3">
+                  {this.renderComment(this.props.selectedDish)}
+               </div>
             </div>
          </div>
       );
