@@ -8,6 +8,12 @@ import { Navbar, NavbarBrand } from "reactstrap";
 
 
 
+
+// Class Components (that holds local states as well as takes props and render Views . It Can Use Lifecycle Functions /hooks like render)
+
+// Container Component (if Navbar Implemented Seperately)
+
+
 class Main extends Component {
 
    constructor(props) {
@@ -33,7 +39,7 @@ class Main extends Component {
                </div>
             </Navbar>
 
-            <Menu dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
+            <Menu dishes={this.state.dishes} onClickAsProps={(dishId) => this.onDishSelect(dishId)} />
 
             <DisplayDish selectedDish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDishId)[0]} />
          </div>
