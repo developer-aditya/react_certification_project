@@ -7,6 +7,10 @@ class Header extends Component {
    constructor(props) {
       super(props);
 
+      // If we use normal Function instead of arrow function as parameter we need to bind this to function
+      // Alternative: Use () => this.toggleNav() instead of just this.toggleNav
+      this.toggleNav = this.toggleNav.bind(this);
+
       this.state = {
          isNavOpen: false
       }
@@ -28,7 +32,7 @@ class Header extends Component {
                   <NavbarBrand href="/">
                      <img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' />
                   </NavbarBrand>
-                  <NavbarToggler onClick={() => this.toggleNav()} />
+                  <NavbarToggler onClick={this.toggleNav} />
                   <Collapse isOpen={this.state.isNavOpen} navbar>
                      <Nav navbar className="ml-auto">
                         <NavItem>
