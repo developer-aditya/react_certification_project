@@ -33,7 +33,7 @@ class Main extends Component {
    render() {
 
       return (
-         <div>
+         <React.Fragment>
             <Header />
 
             <Menu dishes={this.state.dishes} onClickAsProps={(dishId) => this.onDishSelect(dishId)} />
@@ -41,7 +41,7 @@ class Main extends Component {
             <DisplayDish selectedDish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDishId)[0]} />
 
             <Footer />
-         </div>
+         </React.Fragment>
       );
    }
 }
