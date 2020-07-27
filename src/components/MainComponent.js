@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
+import Header from './HeaderComponent';
 import Menu from './MenuComponents';
 import DisplayDish from './DishDetailComponent';
-import { DISHES } from '../shared/dishes';
+import Footer from './FooterComponent';
 
-import { Navbar, NavbarBrand } from "reactstrap";
+import { DISHES } from '../shared/dishes';
 
 
 
@@ -33,15 +34,13 @@ class Main extends Component {
 
       return (
          <div>
-            <Navbar dark color="dark">
-               <div className="container">
-                  <NavbarBrand href="#">Removing all Confusions</NavbarBrand>
-               </div>
-            </Navbar>
+            <Header />
 
             <Menu dishes={this.state.dishes} onClickAsProps={(dishId) => this.onDishSelect(dishId)} />
 
             <DisplayDish selectedDish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDishId)[0]} />
+
+            <Footer />
          </div>
       );
    }
