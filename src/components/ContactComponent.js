@@ -13,6 +13,7 @@ const minLength = (len) => (val) => val && (val.length >= len);
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
+
 class Contact extends Component {
 
     constructor(props) {
@@ -53,12 +54,6 @@ class Contact extends Component {
         this.setState({
             [name]: value
         });
-    }
-
-    handleSubmit(event) {
-        console.log('Current State is: ' + JSON.stringify(this.state));
-        alert('Current State is: ' + JSON.stringify(this.state));
-        // event.preventDefault();
     }
 
     handleBlur = (feild) => (evt) => {
@@ -167,7 +162,7 @@ class Contact extends Component {
                                         model=".firstname"
                                         show="touched"
                                         messages={{
-                                            required: 'Required',
+                                            required: 'Required: ',
                                             minLength: 'Must be greater than 2 characters',
                                             maxLength: 'Must be 15 characters or less'
                                         }}
@@ -189,7 +184,7 @@ class Contact extends Component {
                                         model=".lastname"
                                         show="touched"
                                         messages={{
-                                            required: 'Required',
+                                            required: 'Required: ',
                                             minLength: 'Must be greater than 2 characters',
                                             maxLength: 'Must be 15 characters or less'
                                         }}
@@ -203,7 +198,7 @@ class Contact extends Component {
                                         placeholder="Tel. Number"
                                         className="form-control"
                                         validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(15), isNumber
+                                            required, minLength: minLength(10), maxLength: maxLength(10), isNumber
                                         }}
                                     />
                                     <Errors
@@ -211,10 +206,10 @@ class Contact extends Component {
                                         model=".telnum"
                                         show="touched"
                                         messages={{
-                                            required: 'Required',
-                                            minLength: 'Must be greater than 2 numbers',
-                                            maxLength: 'Must be 15 numbers or less',
-                                            isNumber: 'Must be a number'
+                                            required: 'Required: ',
+                                            minLength: 'Tel. Number Must be Exactly 10 digit',
+                                            maxLength: 'Tel. Number Must be Exactly 10 digit',
+                                            isNumber: 'Tel. Number Should be Numeric'
                                         }}
                                     />
                                 </Col>
@@ -234,7 +229,7 @@ class Contact extends Component {
                                         model=".email"
                                         show="touched"
                                         messages={{
-                                            required: 'Required',
+                                            required: 'Required: ',
                                             validEmail: 'Invalid Email Address'
                                         }}
                                     />
