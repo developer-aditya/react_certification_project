@@ -3,7 +3,6 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 
 
-
 function RenderLeader({ leaderAsProp }) {
     return (
         <Media key={leaderAsProp.id} className="mt-4 p-3 border rounded">
